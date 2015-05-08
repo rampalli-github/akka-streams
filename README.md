@@ -34,3 +34,36 @@ Int: 10
 HasNext Called: 15
 Complete
 ```
+
+## By setting couple of configuration parameters
+```
+akka.stream.materializer.max-input-buffer-size = 1
+akka.stream.materializer.initial-input-buffer-size = 1
+```
+the following is the output
+
+```
+HasNext Called: 1
+HasNext Called: 2
+HasNext Called: 3
+Int: 1
+HasNext Called: 4
+Int: 2
+HasNext Called: 5
+Int: 3
+HasNext Called: 6
+Int: 4
+HasNext Called: 7
+Int: 5
+HasNext Called: 8
+Int: 6
+HasNext Called: 9
+Int: 7
+HasNext Called: 10
+Int: 8
+HasNext Called: 11
+Int: 9
+HasNext Called: 12
+Int: 10
+Complete
+```

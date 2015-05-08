@@ -3,12 +3,13 @@ package sample
 import akka.actor.ActorSystem
 import akka.stream.ActorFlowMaterializer
 import akka.stream.scaladsl.{Sink, Source}
+import com.typesafe.config.ConfigFactory
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{Failure, Success}
 
 object SampleStreams extends App{
 
-  implicit val system = ActorSystem()
+  implicit val system = ActorSystem("Test",ConfigFactory.load())
 
   implicit val materializer = ActorFlowMaterializer()
 
